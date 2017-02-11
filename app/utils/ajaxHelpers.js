@@ -37,6 +37,18 @@ function calculateScores (players) {
 }
 
 var helpers = {
+  login: function(account, password){
+    return axios.post('http://localhost:4545/admin',{account, password})
+  },
+  getAllPost: function(){
+    return axios.get('http://localhost:4545/admin/dashboard')
+  },
+  deletePost: function(postId){
+    return axios.post('http://localhost:4545/admin/dashboard/delete',{postId, postId})
+  },
+  getPostInfo: function(postId){
+    return axios.get('http://localhost:4545/admin/dashboard/edit?postId=' + postId)
+  },
   getPlayersInfo: function (players) {
     return axios.all(players.map(function (username) {
       return getUserInfo(username)

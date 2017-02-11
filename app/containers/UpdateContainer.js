@@ -1,12 +1,11 @@
 var React = require('react');
-var githubHelpers = require('../utils/githubHelpers');
 import EditPost from '../components/EditPost';
 
 
 var EditContainer = React.createClass({
   render: function () {
     return (
-      <EditPost action="Trying to update..."/>
+      <EditPost action="Trying to update..." markdown="这里是markdown" title="这里是title"/>
     )
   }
 });

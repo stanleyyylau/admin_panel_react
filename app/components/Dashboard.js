@@ -3,13 +3,18 @@ var PropTypes = React.PropTypes;
 var transparentBg = require('../styles').transparentBg;
 // import { Button } from 'react-toolbox/lib/button';
 
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link
+
 function Dashboard (props) {
   return (
     <div>
       <div className="sidebar">
         <ul>
           <li>
-            <a href="#">All Post</a>
+            <Link to='dashboard'>
+              <span>All Post</span>
+            </Link>
           </li>
           <li>
             <a href="#">Site Setting</a>

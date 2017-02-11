@@ -12,14 +12,15 @@ var AllPosts = require('../components/AllPosts');
 var EditPost = require('../components/EditPost');
 var EditContainer = require('../containers/EditContainer');
 var UpdateContainer = require('../containers/UpdateContainer');
+var AllPostsContainer = require('../containers/AllPostsContainer');
 
 var routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Login} />
       <Route path='dashboard' component={Dashboard}>
-        <IndexRoute component={AllPosts} />
-        <Route path='edit' component={EditContainer} />
+        <IndexRoute component={AllPostsContainer} />
+        <Route path='edit/:postId' component={EditContainer} />
         <Route path='update' component={UpdateContainer} />
       </Route>  
     </Route>

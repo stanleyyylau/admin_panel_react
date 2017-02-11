@@ -4,8 +4,8 @@ function EditPost (props) {
   return (
     <div className="edit-post-wrap">
       <h2>{props.action}</h2>
-      <input placeholder="Please enter your title here" />
-      <textarea rows="30" cols="100" placeholder="Please enter the post here" />
+      <input placeholder="Please enter your title here" value={props.title || ""} />
+      <textarea rows="30" cols="100" placeholder="Please enter the post here" value={props.markdown || ""} />
       <div>
         <a className="btn-save" href="#">Save</a>    
       </div>
