@@ -18,7 +18,7 @@ function Dashboard (props) {
       <div className="sidebar">
         <ul>
           <li>
-            <Link to='/st-admin/dashboard'>
+            <Link to='dashboard'>
                 <FlatButton label="All Post" style={style} />
             </Link>
           </li>

@@ -28,7 +28,7 @@ var Login = React.createClass({
     .then((result)=>{
       if(result.data.errorCode === 0){
         this.context.router.push({
-          pathname: '/st-admin/dashboard'
+          pathname: '/dashboard'
         })        
       }
     })

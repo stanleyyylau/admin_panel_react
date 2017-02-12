@@ -5,6 +5,13 @@ var Link = ReactRouter.Link
 import SinglePost from './SinglePost';
 
 import RaisedButton from 'material-ui/RaisedButton';
+import {List, ListItem} from 'material-ui/List';
+
+const style = {
+  borderWidth: '1px',
+  borderStyle: 'solid',
+  borderColor: '#dfd7d7'
+}
 
 function AllPosts (props) {
   const allPosts = props.posts.map((post)=>{
@@ -16,11 +23,12 @@ function AllPosts (props) {
 
   return (
     <div className="post-wrap">
-      <h2>I will display all posts here...</h2>
       <Link to='/dashboard/new'>
-        <RaisedButton label="New Post" primary={true}  />
+        <RaisedButton label="New Post" primary={true}  style={{marginBottom:'20px'}}/>
       </Link>
+      <List style={style}>
       {allPosts}
+      </List>
     </div>
   )
 }

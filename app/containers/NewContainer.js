@@ -27,15 +27,14 @@ var NewContainer = React.createClass({
     var self = this;
     helpers.updatePost(this.state.title, this.state.markdown)
     .then((result)=>{
-      console.log(result)
       if(result.data.errorCode === 0){
-        self.context.router.push('/st-admin/dashboard/')
+        self.context.router.push('/dashboard/')
       }
     })
   },
   render: function () {
     return (
-      <EditPost action="Creating a new post..."
+      <EditPost 
         handleMarkdownInput={this.handleMarkdownInput}
         handleTitleInput={this.handleTitleInput}
         handleUpdate={this.handleUpdate}

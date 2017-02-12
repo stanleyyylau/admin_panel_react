@@ -35,17 +35,15 @@ var EditContainer = React.createClass({
     var self = this;
     helpers.updatePost(this.state.title, this.state.markdown, this.state.postId)
     .then((result)=>{
-      console.log(result)
       if(result.data.errorCode === 0){
-        self.context.router.push('/st-admin/dashboard/')
+        self.context.router.push('/dashboard/')
       }
     })
   },
   render: function () {
     return (
       <div>
-        {this.props.routeParams.postId}
-        <EditPost action="Trying to edit..."
+        <EditPost 
         handleMarkdownInput={this.handleMarkdownInput}
         handleTitleInput={this.handleTitleInput}
         handleUpdate={this.handleUpdate}

@@ -31,7 +31,7 @@ var AllPostsContainer = React.createClass({
         })
     },
     handlePostEdit: function(postId){
-        this.context.router.push('/st-admin/dashboard/edit/' + postId)
+        this.context.router.push('dashboard/edit/' + postId)
     },
   render: function () {
     return (
