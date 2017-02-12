@@ -10,6 +10,7 @@ var Login = require("../components/Login");
 var Dashboard = require("../components/Dashboard");
 var AllPosts = require('../components/AllPosts');
 var EditPost = require('../components/EditPost');
+
 var EditContainer = require('../containers/EditContainer');
 var NewContainer = require('../containers/NewContainer');
 var AllPostsContainer = require('../containers/AllPostsContainer');
@@ -28,17 +29,3 @@ var routes = (
 );
 
 module.exports = routes;
-
-
-
-/*var routes = (
-  <Router history={hashHistory}>
-    <Route path='/' component={Main}>
-      <IndexRoute component={Login} />
-      <Route path='dashboard' header='Player One' component={Dashboard} />
-      <Route path='playerTwo/:playerOne' header='Player Two' component={PromptContainer} />
-      <Route path='battle' component={ConfirmBattleContainer} />
-      <Route path='results' component={ResultsContainer} />
-    </Route>
-  </Router>
-);*/

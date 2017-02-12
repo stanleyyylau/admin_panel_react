@@ -2,7 +2,6 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link
 var transparentBg = require('../styles').transparentBg;
-var MainContainer = require('./MainContainer');
 // require('../styles/login.css');
 
 import helpers from '../utils/ajaxHelpers.js';
@@ -25,12 +24,9 @@ var Login = React.createClass({
   },
   handleLogin: function(e){
     e.preventDefault();
-    console.log(this.state);
     helpers.login(this.state.account, this.state.password)
     .then((result)=>{
-      console.log(result)
       if(result.data.errorCode === 0){
-        console.log('login success')
         this.context.router.push({
           pathname: '/dashboard'
         })        
