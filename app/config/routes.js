@@ -11,7 +11,7 @@ var Dashboard = require("../components/Dashboard");
 var AllPosts = require('../components/AllPosts');
 var EditPost = require('../components/EditPost');
 var EditContainer = require('../containers/EditContainer');
-var UpdateContainer = require('../containers/UpdateContainer');
+var NewContainer = require('../containers/NewContainer');
 var AllPostsContainer = require('../containers/AllPostsContainer');
 
 var routes = (
@@ -21,7 +21,7 @@ var routes = (
       <Route path='dashboard' component={Dashboard}>
         <IndexRoute component={AllPostsContainer} />
         <Route path='edit/:postId' component={EditContainer} />
-        <Route path='update' component={UpdateContainer} />
+        <Route path='new' component={NewContainer} />
       </Route>  
     </Route>
   </Router>

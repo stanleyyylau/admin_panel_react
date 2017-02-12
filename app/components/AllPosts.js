@@ -19,7 +19,7 @@ function AllPosts (props) {
   return (
     <div className="post-wrap">
       <h2>I will display all posts here...</h2>
-      <Link to='dashboard/edit'>
+      <Link to='dashboard/new'>
         <button className="addNew">New Post</button>
       </Link>
       {allPosts}

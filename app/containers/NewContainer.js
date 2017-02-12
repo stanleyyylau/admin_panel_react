@@ -3,23 +3,15 @@ import EditPost from '../components/EditPost';
 import helpers from '../utils/ajaxHelpers.js';
 
 
-var EditContainer = React.createClass({
+var NewContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
   getInitialState: function(){
-    return {post:{}}
-  },
-  componentDidMount: function(){
-    var self = this;
-    helpers.getPostInfo(this.props.routeParams.postId)
-    .then((result)=>{
-      self.setState({
-        title: result.data.post.title,
-        markdown: result.data.post.markdown,
-        postId: result.data.post._id
-      })
-    })
+    return {
+      title: "",
+      markdown: ""
+    }
   },
   handleTitleInput: function(e){
     this.setState({
@@ -33,7 +25,7 @@ var EditContainer = React.createClass({
   },
   handleUpdate: function(){
     var self = this;
-    helpers.updatePost(this.state.title, this.state.markdown, this.state.postId)
+    helpers.updatePost(this.state.title, this.state.markdown)
     .then((result)=>{
       console.log(result)
       if(result.data.errorCode === 0){
@@ -43,20 +35,15 @@ var EditContainer = React.createClass({
   },
   render: function () {
     return (
-      <div>
-        {this.props.routeParams.postId}
-        <EditPost action="Trying to edit..."
+      <EditPost action="Creating a new post..."
         handleMarkdownInput={this.handleMarkdownInput}
         handleTitleInput={this.handleTitleInput}
         handleUpdate={this.handleUpdate}
-        postId={this.state.postId}
         title={this.state.title}
         markdown={this.state.markdown}
-        />
-      </div>
-      
+      />
     )
   }
 });
 
-module.exports = EditContainer;
+module.exports = NewContainer;
