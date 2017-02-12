@@ -3,6 +3,7 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var hashHistory = ReactRouter.hashHistory;
+var browserHistory = ReactRouter.browserHistory;
 var IndexRoute = ReactRouter.IndexRoute;
 
 var Main = require('../components/Main');
@@ -16,8 +17,8 @@ var NewContainer = require('../containers/NewContainer');
 var AllPostsContainer = require('../containers/AllPostsContainer');
 
 var routes = (
-  <Router history={hashHistory}>
-    <Route path='/' component={Main}>
+  <Router history={browserHistory}>
+    <Route path='st-admin' component={Main}>
       <IndexRoute component={Login} />
       <Route path='dashboard' component={Dashboard}>
         <IndexRoute component={AllPostsContainer} />

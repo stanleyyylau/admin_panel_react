@@ -29,7 +29,7 @@ var NewContainer = React.createClass({
     .then((result)=>{
       console.log(result)
       if(result.data.errorCode === 0){
-        self.context.router.push('/dashboard/')
+        self.context.router.push('/st-admin/dashboard/')
       }
     })
   },

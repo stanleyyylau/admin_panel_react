@@ -12,7 +12,7 @@ function Dashboard (props) {
       <div className="sidebar">
         <ul>
           <li>
-            <Link to='dashboard'>
+            <Link to='/st-admin/dashboard'>
               <span>All Post</span>
             </Link>
           </li>

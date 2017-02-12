@@ -14,9 +14,7 @@ var AllPostsContainer = React.createClass({
         var self = this;
          helpers.getAllPost()
         .then((result) =>{
-            console.log(result)
             self.setState({posts:result.data.posts})
-            console.log(self.state)
         })
     },
     componentDidMount: function(){
@@ -27,15 +25,13 @@ var AllPostsContainer = React.createClass({
         var self = this;
         helpers.deletePost(postId)
         .then((result)=>{
-            console.log(result)
             if(result.data.errorCode ===0){
                 self.getAllPosts()
             }
         })
     },
     handlePostEdit: function(postId){
-        console.log(postId)
-        this.context.router.push('/dashboard/edit/' + postId)
+        this.context.router.push('/st-admin/dashboard/edit/' + postId)
     },
   render: function () {
     return (
