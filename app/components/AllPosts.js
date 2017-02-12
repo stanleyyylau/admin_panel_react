@@ -4,6 +4,8 @@ var Link = ReactRouter.Link
 
 import SinglePost from './SinglePost';
 
+import RaisedButton from 'material-ui/RaisedButton';
+
 function AllPosts (props) {
   const allPosts = props.posts.map((post)=>{
     return <SinglePost key={post._id} postId={post._id} title={post.title} 
@@ -15,8 +17,8 @@ function AllPosts (props) {
   return (
     <div className="post-wrap">
       <h2>I will display all posts here...</h2>
-      <Link to='/st-admin/dashboard/new'>
-        <button className="addNew">New Post</button>
+      <Link to='/dashboard/new'>
+        <RaisedButton label="New Post" primary={true}  />
       </Link>
       {allPosts}
     </div>

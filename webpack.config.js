@@ -21,16 +21,19 @@ module.exports = {
       { test: /\.css$/, loader: "style-loader!css-loader" }
     ]
   },
-  plugins: [HTMLWebpackPluginConfig, 
-    new webpack.DefinePlugin({
-        'process.env':{
-          'NODE_ENV': JSON.stringify('production')
-        }
-      }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress:{
-        warnings: true
-      }
-    })
-    ]
+  plugins: [HTMLWebpackPluginConfig]
 };
+
+// production
+  // plugins: [HTMLWebpackPluginConfig, 
+  //   new webpack.DefinePlugin({
+  //       'process.env':{
+  //         'NODE_ENV': JSON.stringify('production')
+  //       }
+  //     }),
+  //   new webpack.optimize.UglifyJsPlugin({
+  //     compress:{
+  //       warnings: true
+  //     }
+  //   })
+  //   ]

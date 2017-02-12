@@ -12,21 +12,30 @@ var Dashboard = require("../components/Dashboard");
 var AllPosts = require('../components/AllPosts');
 var EditPost = require('../components/EditPost');
 
+var PlayGround = require('../components/PlayGround');
+
 var EditContainer = require('../containers/EditContainer');
 var NewContainer = require('../containers/NewContainer');
 var AllPostsContainer = require('../containers/AllPostsContainer');
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+injectTapEventPlugin();
+
 var routes = (
-  <Router history={browserHistory}>
-    <Route path='st-admin' component={Main}>
-      <IndexRoute component={Login} />
-      <Route path='dashboard' component={Dashboard}>
-        <IndexRoute component={AllPostsContainer} />
-        <Route path='edit/:postId' component={EditContainer} />
-        <Route path='new' component={NewContainer} />
-      </Route>  
-    </Route>
-  </Router>
+    <MuiThemeProvider>
+      <Router history={hashHistory}>
+        <Route path='/' component={Main}>
+          <IndexRoute component={Login} />
+          <Route path='dashboard' component={Dashboard}>
+            <IndexRoute component={AllPostsContainer} />
+            <Route path='edit/:postId' component={EditContainer} />
+            <Route path='new' component={NewContainer} />
+          </Route> 
+          <Route path="playground" component={PlayGround} /> 
+        </Route>
+      </Router>  
+    </MuiThemeProvider>
 );
 
 module.exports = routes;

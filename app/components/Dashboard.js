@@ -1,10 +1,16 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var transparentBg = require('../styles').transparentBg;
-// import { Button } from 'react-toolbox/lib/button';
+
+import FlatButton from 'material-ui/FlatButton';
 
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link
+
+const style = {
+  textAlign: 'left'
+};
+
 
 function Dashboard (props) {
   return (
@@ -13,14 +19,14 @@ function Dashboard (props) {
         <ul>
           <li>
             <Link to='/st-admin/dashboard'>
-              <span>All Post</span>
+                <FlatButton label="All Post" style={style} />
             </Link>
           </li>
           <li>
-            <a href="#">Site Setting</a>
+                <FlatButton label="Site Setting" style={style} />
           </li>
           <li>
-            <a href="#">Exit</a>
+                <FlatButton label="Exit" style={style} />
           </li>
         </ul>
       </div>
